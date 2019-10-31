@@ -51,7 +51,7 @@ public class DictionaryController implements Controller {
 
 		switch (mode) {
 		
-		// Arriva qui dalla UserReadView. Invoca il Service con il parametro id e invia alla UserReadView uno user da mostrare 
+		// Arriva qui dalla DictionaryReadView. Invoca il Service con il parametro id e invia alla DictionaryReadView uno user da mostrare 
 		case "READ":
 			id = Integer.parseInt(request.get("id").toString());
 			DictionaryDTO dictionaryDTO = dictionaryService.read(id);
@@ -59,11 +59,11 @@ public class DictionaryController implements Controller {
 			MainDispatcher.getInstance().callView(sub_package + "DictionaryRead", request);
 			break;
 		
-		// Arriva qui dalla UserInsertView. Estrae i parametri da inserire e chiama il service per inserire uno user con questi parametri
+		// Arriva qui dalla DictionaryInsertView. Estrae i parametri da inserire e chiama il service per inserire un Dictionary con questi parametri
 		case "INSERT":
 			name = request.get("name").toString();
 			
-			//costruisce l'oggetto user da inserire
+			//costruisce l'oggetto Dictionary da inserire
 			DictionaryDTO dictionarytoinsert = new DictionaryDTO(name);
 			//invoca il service
 			dictionaryService.insert(dictionarytoinsert);
@@ -73,13 +73,13 @@ public class DictionaryController implements Controller {
 			MainDispatcher.getInstance().callView(sub_package + "DictionaryInsert", request);
 			break;
 		
-		// Arriva qui dalla UserDeleteView. Estrae l'id dell'utente da cancellare e lo passa al Service
+		// Arriva qui dalla DictionaryDeleteView. Estrae l'id dell'utente da cancellare e lo passa al Service
 		case "DELETE":
 			id = Integer.parseInt(request.get("id").toString());
 			//Qui chiama il service
 			dictionaryService.delete(id);
 			request = new Request();
-			request.put("mode", "mode");
+			request.put("mode", "mode");			
 			MainDispatcher.getInstance().callView(sub_package + "DictionaryDelete", request);
 			break;
 		
@@ -95,7 +95,7 @@ public class DictionaryController implements Controller {
 			MainDispatcher.getInstance().callView(sub_package + "DictionaryUpdate", request);
 			break;
 			
-		//Arriva qui dalla UserView Invoca il Service e invia alla UserView il risultato da mostrare 
+		//Arriva qui dalla DictionaryView Invoca il Service e invia alla DictionaryView il risultato da mostrare 
 		case "DICTIONARYLIST":
 			List<DictionaryDTO> dictionariesDTO = dictionaryService.getAll();
 			//Impacchetta la request con la lista dei dizionari
@@ -119,10 +119,28 @@ public class DictionaryController implements Controller {
 				break;
 				
 			case "M":
+				
+				System.out.println();
+				List<DictionaryDTO> dicts = dictionaryService.getAll();
+				for(DictionaryDTO d : dicts)
+				{
+					System.out.println(d);
+				}
+				System.out.println();
+				
 				MainDispatcher.getInstance().callView(sub_package + "DictionaryUpdate", null);
 				break;
 				
 			case "C":
+				
+				System.out.println();
+				List<DictionaryDTO> dic = dictionaryService.getAll();
+				for(DictionaryDTO d : dic)
+				{
+					System.out.println(d);
+				}
+				System.out.println();
+				
 				MainDispatcher.getInstance().callView(sub_package + "DictionaryDelete", null);
 				break;
 				

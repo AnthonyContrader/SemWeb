@@ -48,8 +48,6 @@ public class DictionaryView extends AbstractView {
 		System.out.println("[L]eggi [I]nserisci [M]odifica [C]ancella [B]ack [E]sci");
 
 		this.choice = getInput();
-
-		
 	}
 	
 	/**
@@ -62,5 +60,4 @@ public class DictionaryView extends AbstractView {
 		request.put("mode", "GETCHOICE");
 		MainDispatcher.getInstance().callAction("Dictionary", "doControl", this.request);
 	}
-
 }
