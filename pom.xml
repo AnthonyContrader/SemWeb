@@ -9,7 +9,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>SAMPLE</name>
+	<name>SemWeb</name>
 	<description>Sample Project</description>
 
 	<parent>

@@ -14,8 +14,11 @@
 	<%@ include file="./css/header.jsp"%>
 
 	<div class="navbar">
-		<a href="/homeadmin.jsp">Home</a> <a class="active"
-			href="/user/getall">Users</a> <a href="/user/logout" id="logout">Logout</a>
+		<a href="/homeadmin.jsp">Home</a> 
+		<a class="active" href="/user/getall">Users</a> 
+		<a href="/research/getall">Researches</a>
+		<a href="/topic/getall">Topics</a>
+		<a href="/user/logout" id="logout">Logout</a>
 	</div>
 	<div class="main">
 		<%
@@ -36,8 +39,7 @@
 				for (UserDTO u : list) {
 			%>
 			<tr>
-				<td><a href="/user/read?id=<%=u.getId()%>"> <%=u.getUsername()%>
-				</a></td>
+				<td><a href="/user/read?id=<%=u.getId()%>"> <%=u.getUsername()%> </a></td>
 				<td><%=u.getPassword()%></td>
 				<td><%=u.getUsertype()%></td>
 				<td><a href="/user/preupdate?id=<%=u.getId()%>">Edit</a></td>
