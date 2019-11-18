@@ -1,6 +1,8 @@
 package it.contrader.controller;
 
 import java.sql.Date;
+import java.util.Calendar;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,7 +46,7 @@ public class ResearchController {
 	public String update(HttpServletRequest request, @RequestParam("id") Long id, 
 			@RequestParam("topicname") String topic, @RequestParam("topicid") Long topicId) {
 		
-		Date date = null;
+		Date date = new Date(Calendar.getInstance().getTime().getTime());
 		
 		TopicDTO t = new TopicDTO();
 		t.setId(topicId);
@@ -64,7 +66,7 @@ public class ResearchController {
 	@PostMapping("/insert")
 	public String insert(HttpServletRequest request, @RequestParam("topicname") String topic) {
 		
-		Date date = null;
+		Date date = new Date(Calendar.getInstance().getTime().getTime());
 		
 		TopicDTO t = new TopicDTO();
 		t.setKeywords(topic);		
@@ -92,6 +94,4 @@ public class ResearchController {
 	private void setAll(HttpServletRequest request) {
 		request.getSession().setAttribute("list", service.getAll());
 	}
-	
-
 }
