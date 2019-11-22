@@ -1,4 +1,5 @@
-import {Usertype} from './usertype';
+import { Usertype } from './usertype';
+import { ResearchDTO } from './researchdto';
 
 /**
  * Classe DTO di User. DEVE essere uguale (stesso nome classe, stessi attributi e stessi nomi) a
@@ -18,5 +19,10 @@ export class UserDTO {
 
    usertype: Usertype;
 
+   friends: UserDTO[];
+
+   friendOf: UserDTO[];
+
+   researches: ResearchDTO[];
 }
 
