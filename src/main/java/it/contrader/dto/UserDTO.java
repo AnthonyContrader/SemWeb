@@ -1,5 +1,6 @@
 package it.contrader.dto;
 
+import java.util.List;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import it.contrader.model.User.Usertype;
@@ -28,5 +29,10 @@ public class UserDTO {
 
 	private Usertype usertype;
 	
+	private List<UserDTO> friends;
+	
+	private List<UserDTO> friendOf;
+	
+	private List<ResearchDTO> researches;
 
 }

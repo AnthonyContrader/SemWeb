@@ -9,8 +9,8 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>SAMPLE</name>
-	<description>Sample project</description>
+	<name>SEMWEB</name>
+	<description>Semantic web</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>

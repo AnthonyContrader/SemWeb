@@ -1,15 +1,15 @@
 package it.contrader.model;
 
 import javax.persistence.Entity;
-
+import java.util.List;
 import javax.persistence.*;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 /**
  * 
@@ -22,6 +22,8 @@ import lombok.NoArgsConstructor;
  */
 @Data
 @Entity
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 public class User {
@@ -42,4 +44,16 @@ public class User {
 
 	private Usertype usertype;
 	
+	@ManyToMany
+	@JoinTable(name = "tbl_friends", joinColumns = @JoinColumn(name = "personId"),
+		inverseJoinColumns = @JoinColumn(name = "friendId"))
+	private List<User> friends;
+	
+	@ManyToMany
+	@JoinTable(name = "tbl_friends", joinColumns = @JoinColumn(name = "friendId"),
+	 	inverseJoinColumns = @JoinColumn(name = "personId"))
+	private List<User> friendOf;
+	
+	@OneToMany(mappedBy = "researcher")
+	private List<Research> researches;
 }
