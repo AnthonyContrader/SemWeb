@@ -13,6 +13,12 @@
             <p *ngIf="researches.length > 0">Date</p>
           </th>
           <th>
+            <p *ngIf="researches.length > 0">User</p>
+          </th>
+          <th>
+            <p *ngIf="researches.length > 0">User_id</p>
+          </th>
+          <th>
             Edit
           </th>
           <th>
@@ -23,9 +29,11 @@
           <td>
             <input placeholder="topic" [(ngModel)]="researchtoinsert.topic.keywords">
           </td>
-          <th>
-            
-          </th>
+
+          <td></td>
+          <td></td>
+          <td></td>
+
           <td>
             <button (click)="insert(researchtoinsert)">Insert</button>
           </td>
@@ -39,6 +47,12 @@
           </td>
           <td>
             <input type="date" [(ngModel)]="research.date">
+          </td>
+          <td>
+            <p *ngIf="researches.length > 0">{{user.username}}</p>
+          </td>
+          <td>
+            <p *ngIf="researches.length > 0">{{user.id}}</p>
           </td>
           <td>
             <button (click)=update(research)>Save</button>
