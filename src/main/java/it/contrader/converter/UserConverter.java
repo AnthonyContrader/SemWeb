@@ -20,7 +20,7 @@ public class UserConverter extends AbstractConverter<User,UserDTO> {
 		User user = null;
 		if (userDTO != null) {
 			
-			ResearchConverter rc = new ResearchConverter();
+			// ResearchConverter rc = new ResearchConverter();
 			
 			user = new User();
 			user.setId(userDTO.getId());
@@ -28,9 +28,9 @@ public class UserConverter extends AbstractConverter<User,UserDTO> {
 			user.setPassword(userDTO.getPassword());
 			user.setUsertype(userDTO.getUsertype());			
 			
-			user.setFriends(this.toEntityList(userDTO.getFriends()));
-			user.setFriendOf(this.toEntityList(userDTO.getFriendOf()));
-			user.setResearches(rc.toEntityList(userDTO.getResearches()));
+//			user.setFriends(this.toEntityList(userDTO.getFriends()));
+//			user.setFriendOf(this.toEntityList(userDTO.getFriendOf()));
+//			user.setResearches(rc.toEntityList(userDTO.getResearches()));
 		}
 		return user;
 	}
@@ -40,7 +40,7 @@ public class UserConverter extends AbstractConverter<User,UserDTO> {
 		UserDTO userDTO = null;
 		if (user != null) {
 			
-			ResearchConverter rc = new ResearchConverter();
+			// ResearchConverter rc = new ResearchConverter();
 						
 			userDTO = new UserDTO();
 			userDTO.setId(user.getId());
@@ -48,9 +48,9 @@ public class UserConverter extends AbstractConverter<User,UserDTO> {
 			userDTO.setPassword(user.getPassword());
 			userDTO.setUsertype(user.getUsertype());
 			
-			userDTO.setFriends(this.toDTOList(user.getFriends()));
-			userDTO.setFriendOf(this.toDTOList(user.getFriendOf()));
-			userDTO.setResearches(rc.toDTOList(user.getResearches()));
+//			userDTO.setFriends(this.toDTOList(user.getFriends()));
+//			userDTO.setFriendOf(this.toDTOList(user.getFriendOf()));
+//			userDTO.setResearches(rc.toDTOList(user.getResearches()));
 		}
 		return userDTO;
 	}

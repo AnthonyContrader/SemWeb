@@ -13,12 +13,9 @@ public class TopicConverter extends AbstractConverter<Topic, TopicDTO> {
 		Topic t = null;
 		if(dto != null)
 		{
-			ResearchConverter rc = new ResearchConverter();
-			
 			t = new Topic();
 			t.setId(dto.getId());
 			t.setKeywords(dto.getKeywords());
-			t.setResearched(rc.toEntityList(dto.getResearched()));
 		}
 		return t;
 	}
@@ -27,13 +24,10 @@ public class TopicConverter extends AbstractConverter<Topic, TopicDTO> {
 	public TopicDTO toDTO(Topic topic) {
 		TopicDTO dto = null;
 		if(topic != null)
-		{
-			ResearchConverter rc = new ResearchConverter();
-			
+		{			
 			dto = new TopicDTO();
 			dto.setId(topic.getId());
 			dto.setKeywords(topic.getKeywords());
-			dto.setResearched(rc.toDTOList(topic.getResearched()));
 		}
 		return dto;
 	}

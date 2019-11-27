@@ -1,7 +1,6 @@
 package it.contrader.model;
 
 import javax.persistence.Entity;
-import java.util.List;
 import javax.persistence.*;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -44,16 +43,16 @@ public class User {
 
 	private Usertype usertype;
 	
-	@ManyToMany
-	@JoinTable(name = "tbl_friends", joinColumns = @JoinColumn(name = "personId"),
-		inverseJoinColumns = @JoinColumn(name = "friendId"))
-	private List<User> friends;
+//	@ManyToMany
+//	@JoinTable(name = "tbl_friends", joinColumns = @JoinColumn(name = "personId"),
+//		inverseJoinColumns = @JoinColumn(name = "friendId"))
+//	private List<User> friends;
+//	
+//	@ManyToMany
+//	@JoinTable(name = "tbl_friends", joinColumns = @JoinColumn(name = "friendId"),
+//	 	inverseJoinColumns = @JoinColumn(name = "personId"))
+//	private List<User> friendOf;
 	
-	@ManyToMany
-	@JoinTable(name = "tbl_friends", joinColumns = @JoinColumn(name = "friendId"),
-	 	inverseJoinColumns = @JoinColumn(name = "personId"))
-	private List<User> friendOf;
-	
-	@OneToMany(mappedBy = "researcher")
-	private List<Research> researches;
+//	@OneToMany(mappedBy = "researcher")
+//	private List<Research> researches;
 }

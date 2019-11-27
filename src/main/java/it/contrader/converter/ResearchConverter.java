@@ -19,7 +19,7 @@ public class ResearchConverter extends AbstractConverter<Research, ResearchDTO> 
 			r.setId(dto.getId());
 			r.setDate(dto.getDate());
 			r.setResearcher(uc.toEntity(dto.getResearcher()));
-			r.setTopics(tc.toEntityList(dto.getTopics()));
+			r.setTopic(tc.toEntity(dto.getTopic()));
 						
 		}
 		return r;
@@ -37,7 +37,7 @@ public class ResearchConverter extends AbstractConverter<Research, ResearchDTO> 
 			dto.setId(research.getId());
 			dto.setDate(research.getDate());
 			dto.setResearcher(uc.toDTO(research.getResearcher()));
-			dto.setTopics(tc.toDTOList(research.getTopics()));
+			dto.setTopic(tc.toDTO(research.getTopic()));
 			
 		}
 		return dto;
