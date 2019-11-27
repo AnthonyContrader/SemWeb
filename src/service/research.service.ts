@@ -10,5 +10,6 @@ export class ResearchService extends AbstractService<ResearchDTO> {
 
   constructor(http: HttpClient) { 
     super(http);
+    this.type = "research";
   }
 }

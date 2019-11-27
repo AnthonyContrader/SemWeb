@@ -10,5 +10,6 @@ export class TopicService extends AbstractService<TopicDTO> {
 
   constructor(http: HttpClient) { 
     super(http);
+    this.type = "topic";
   }
 }

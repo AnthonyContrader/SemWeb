@@ -9,6 +9,6 @@ export class ResearchDTO {
 
     researcher: UserDTO;
 
-    topics: TopicDTO[];
+    topic: TopicDTO;
 
 }

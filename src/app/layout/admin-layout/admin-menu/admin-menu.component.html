@@ -30,6 +30,29 @@
                         </i> Manage Users </a>
                 </button>
             </div>
+
+            <button type="button" class="menubtn" data-toggle="collapsebtn" data-target="#researches"
+                (click)="researchescollapse()">
+                <i class="fas fa-users" style="margin-right: 15px"></i>Researches
+            </button>
+            <div class="collapsebtn" id="researches" *ngIf="isResearchCollapsed">
+                <button class="menubtn" style="padding-left: 40px; background-color: #334247;">
+                    <a [routerLink]="['/admin-dashboard/researches']"> <i class="fas fa-edit" style="margin-right: 10px">
+                        </i> Manage Researches </a>
+                </button>
+            </div>
+
+            <button type="button" class="menubtn" data-toggle="collapsebtn" data-target="#topics"
+                (click)="topicscollapse()">
+                <i class="fas fa-users" style="margin-right: 15px"></i>Topics
+            </button>
+            <div class="collapsebtn" id="topics" *ngIf="isTopicCollapsed">
+                <button class="menubtn" style="padding-left: 40px; background-color: #334247;">
+                    <a [routerLink]="['/admin-dashboard/topics']"> <i class="fas fa-edit" style="margin-right: 10px">
+                        </i> Manage topics </a>
+                </button>
+            </div>
+
             <button class="menubtn" (click)="logout()">
                 <i class="fas fa-sign-out-alt" style="margin-right: 15px"></i>Logout
             </button>

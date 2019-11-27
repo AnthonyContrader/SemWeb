@@ -18,11 +18,5 @@ export class UserDTO {
    password: string;
 
    usertype: Usertype;
-
-   friends: UserDTO[];
-
-   friendOf: UserDTO[];
-
-   researches: ResearchDTO[];
 }
 

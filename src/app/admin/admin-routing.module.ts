@@ -4,6 +4,8 @@ import { AdminLayoutComponent } from '../layout/admin-layout/admin-layout.compon
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { UsersComponent } from './users/users.component';
 import { WorkInProgressComponent } from './work-in-progress/work-in-progress.component';
+import { ResearchesComponent } from './researches/researches.component';
+import { TopicsComponent } from './topics/topics.component';
 
 /**
  * Modulo di routing dell'admin. Qui ci sono i percorsi che un admin può seguire:
@@ -21,6 +23,8 @@ const routes: Routes = [
   { path: 'admin-dashboard', component: AdminLayoutComponent, children:[
     { path: '', component: AdminDashboardComponent},
     { path: 'users', component: UsersComponent},
+    { path: 'researches', component: ResearchesComponent},
+    { path: 'topics', component: TopicsComponent},
     { path: 'work-in-progress', component: WorkInProgressComponent}
   ]}
 ];
