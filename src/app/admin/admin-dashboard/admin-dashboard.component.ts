@@ -19,5 +19,4 @@ export class AdminDashboardComponent implements OnInit {
   ngOnInit() {
     this.user = JSON.parse(localStorage.getItem('currentUser'));
   }
-
 }

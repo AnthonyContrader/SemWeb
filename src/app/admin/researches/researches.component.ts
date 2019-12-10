@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ResearchDTO } from 'src/dto/researchdto';
 import { ResearchService } from 'src/service/research.service';
 import { UserDTO } from 'src/dto/userdto';
-import { TopicService } from 'src/service/topic.service';
 import { TopicDTO } from 'src/dto/topicdto';
 
 @Component({
