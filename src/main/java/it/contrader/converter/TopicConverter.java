@@ -9,26 +9,26 @@ import it.contrader.model.Topic;
 public class TopicConverter extends AbstractConverter<Topic, TopicDTO> {
 
 	@Override
-	public Topic toEntity(TopicDTO dto) {
-		Topic t = null;
-		if(dto != null)
+	public Topic toEntity(TopicDTO topicDTO) {
+		Topic topic = null;
+		if(topicDTO != null)
 		{
-			t = new Topic();
-			t.setId(dto.getId());
-			t.setKeywords(dto.getKeywords());
+			topic = new Topic();
+			topic.setId(topicDTO.getId());
+			topic.setKeywords(topicDTO.getKeywords());
 		}
-		return t;
+		return topic;
 	}
 
 	@Override
 	public TopicDTO toDTO(Topic topic) {
-		TopicDTO dto = null;
+		TopicDTO topicDTO = null;
 		if(topic != null)
 		{			
-			dto = new TopicDTO();
-			dto.setId(topic.getId());
-			dto.setKeywords(topic.getKeywords());
+			topicDTO = new TopicDTO();
+			topicDTO.setId(topic.getId());
+			topicDTO.setKeywords(topic.getKeywords());
 		}
-		return dto;
+		return topicDTO;
 	}
 }

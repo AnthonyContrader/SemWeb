@@ -19,9 +19,6 @@ public class UserConverter extends AbstractConverter<User,UserDTO> {
 	public User toEntity(UserDTO userDTO) {
 		User user = null;
 		if (userDTO != null) {
-			
-			// ResearchConverter rc = new ResearchConverter();
-			
 			user = new User();
 			user.setId(userDTO.getId());
 			user.setUsername(userDTO.getUsername());
@@ -30,7 +27,6 @@ public class UserConverter extends AbstractConverter<User,UserDTO> {
 			
 //			user.setFriends(this.toEntityList(userDTO.getFriends()));
 //			user.setFriendOf(this.toEntityList(userDTO.getFriendOf()));
-//			user.setResearches(rc.toEntityList(userDTO.getResearches()));
 		}
 		return user;
 	}
@@ -39,9 +35,6 @@ public class UserConverter extends AbstractConverter<User,UserDTO> {
 	public UserDTO toDTO(User user) {
 		UserDTO userDTO = null;
 		if (user != null) {
-			
-			// ResearchConverter rc = new ResearchConverter();
-						
 			userDTO = new UserDTO();
 			userDTO.setId(user.getId());
 			userDTO.setUsername(user.getUsername());
@@ -50,7 +43,6 @@ public class UserConverter extends AbstractConverter<User,UserDTO> {
 			
 //			userDTO.setFriends(this.toDTOList(user.getFriends()));
 //			userDTO.setFriendOf(this.toDTOList(user.getFriendOf()));
-//			userDTO.setResearches(rc.toDTOList(user.getResearches()));
 		}
 		return userDTO;
 	}

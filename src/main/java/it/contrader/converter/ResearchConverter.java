@@ -1,45 +1,48 @@
 package it.contrader.converter;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import it.contrader.dto.ResearchDTO;
 import it.contrader.model.Research;
 
 @Component
 public class ResearchConverter extends AbstractConverter<Research, ResearchDTO> {
+	
+	@Autowired
+	private UserConverter userConverter;
+	
+	@Autowired
+	private TopicConverter topicConverter;
 
 	@Override
-	public Research toEntity(ResearchDTO dto) {
-		Research r = null;
-		if(dto != null) 
-		{
-			UserConverter uc = new UserConverter();
-			TopicConverter tc = new TopicConverter();
-			
-			r = new Research();
-			r.setId(dto.getId());
-			r.setDate(dto.getDate());
-			r.setResearcher(uc.toEntity(dto.getResearcher()));
-			r.setTopic(tc.toEntity(dto.getTopic()));
-						
+	public Research toEntity(ResearchDTO researchDTO) {
+		Research research = null;
+		if(researchDTO != null) 
+		{			
+			research = new Research();
+			research.setId(researchDTO.getId());
+			research.setDate(researchDTO.getDate());
+			if(researchDTO.getUserDTO() != null)
+				research.setUserId(userConverter.toEntity(researchDTO.getUserDTO()));
+			if(researchDTO.getTopicDTO() != null) 
+				research.setTopicId(topicConverter.toEntity(researchDTO.getTopicDTO()));						
 		}
-		return r;
+		return research;
 	}
 
 	@Override
 	public ResearchDTO toDTO(Research research) {
-		ResearchDTO dto = null;
+		ResearchDTO researchDTO = null;
 		if(research != null)
 		{
-			UserConverter uc = new UserConverter();
-			TopicConverter tc = new TopicConverter();
-			
-			dto = new ResearchDTO();
-			dto.setId(research.getId());
-			dto.setDate(research.getDate());
-			dto.setResearcher(uc.toDTO(research.getResearcher()));
-			dto.setTopic(tc.toDTO(research.getTopic()));
-			
+			researchDTO = new ResearchDTO();
+			researchDTO.setId(research.getId());
+			researchDTO.setDate(research.getDate());
+			if(research.getUserId() != null)
+				researchDTO.setUserDTO(userConverter.toDTO(research.getUserId()));
+			if(research.getTopicId() != null)
+				researchDTO.setTopicDTO(topicConverter.toDTO(research.getTopicId()));
 		}
-		return dto;
+		return researchDTO;
 	}
 }
