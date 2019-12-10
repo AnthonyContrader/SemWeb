@@ -4,14 +4,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import it.contrader.dto.FileDTO;
-import it.contrader.service.FileService;
+
+import it.contrader.service.BookmarkService;
 
 @RestController
-@RequestMapping("/file")
+@RequestMapping("/bookmark")
 @CrossOrigin(origins = "http://localhost:4200")
-public class FileController extends AbstractController<FileDTO> 
-{
-	@Autowired
-	private FileService fileService;
+public class BookmarkController {
+
+	@Autowired BookmarkService bookmarkService;
+	
 }
