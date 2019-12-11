@@ -11,7 +11,7 @@ import { Observable } from 'rxjs';
  *  il metodo per il login (in mirror con il backend).
  * 
  * @author Vittorio Valent
- * 
+ *  
  * @see AbstractService
  */
 @Injectable({

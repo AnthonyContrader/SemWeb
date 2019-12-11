@@ -18,7 +18,7 @@ export class ResearchesComponent implements OnInit {
   constructor(private service: ResearchService) { }
 
   ngOnInit() {
-    this.researchtoinsert.topic = new TopicDTO();
+    this.researchtoinsert.topicDTO = new TopicDTO();
     this.getResearches();
     this.user = JSON.parse(localStorage.getItem('currentUser'));
   }
@@ -36,13 +36,13 @@ export class ResearchesComponent implements OnInit {
   }
 
   insert(research: ResearchDTO) {
-    research.researcher = this.user;
+    research.userDTO = this.user;
     research.date = new Date();
     this.service.insert(research).subscribe(() => this.getResearches());
   }
 
   clear(){
     this.researchtoinsert = new ResearchDTO();
-    this.researchtoinsert.topic = new TopicDTO();
+    this.researchtoinsert.topicDTO = new TopicDTO();
   }
 }

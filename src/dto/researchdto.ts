@@ -7,8 +7,8 @@ export class ResearchDTO {
 
     date: Date;
 
-    userId: UserDTO;
+    userDTO: UserDTO;
 
-    topicId: TopicDTO;
+    topicDTO: TopicDTO;
 
 }
