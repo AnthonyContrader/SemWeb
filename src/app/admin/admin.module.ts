@@ -7,7 +7,6 @@ import { UsersComponent } from './users/users.component';
 import { WorkInProgressComponent } from './work-in-progress/work-in-progress.component';
 import { ResearchesComponent } from './researches/researches.component';
 import { TopicsComponent } from './topics/topics.component';
-import { BookmarksComponent } from './bookmarks/bookmarks.component';
 import { FilesComponent } from './files/files.component';
 
 /**
@@ -20,7 +19,7 @@ import { FilesComponent } from './files/files.component';
  */
 @NgModule({
   declarations: [AdminDashboardComponent, UsersComponent, WorkInProgressComponent, ResearchesComponent, 
-    TopicsComponent, BookmarksComponent, FilesComponent],
+    TopicsComponent, FilesComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,
