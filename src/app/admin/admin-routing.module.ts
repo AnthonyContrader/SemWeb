@@ -6,7 +6,6 @@ import { UsersComponent } from './users/users.component';
 import { WorkInProgressComponent } from './work-in-progress/work-in-progress.component';
 import { ResearchesComponent } from './researches/researches.component';
 import { TopicsComponent } from './topics/topics.component';
-import { BookmarksComponent } from './bookmarks/bookmarks.component';
 import { FilesComponent } from './files/files.component';
 
 /**
@@ -27,7 +26,6 @@ const routes: Routes = [
     { path: 'users', component: UsersComponent},
     { path: 'researches', component: ResearchesComponent},
     { path: 'topics', component: TopicsComponent},
-    { path: 'bookmarks', component: BookmarksComponent},
     { path: 'files', component: FilesComponent},
     { path: 'work-in-progress', component: WorkInProgressComponent}
   ]}
