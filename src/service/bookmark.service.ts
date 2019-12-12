@@ -13,4 +13,4 @@ export class BookmarkService extends AbstractService<BookmarkDTO> {
     this.type = "bookmark";
   }
 }
-}
+

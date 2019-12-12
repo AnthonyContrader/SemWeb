@@ -53,6 +53,28 @@
                 </button>
             </div>
 
+            <button type="button" class="menubtn" data-toggle="collapsebtn" data-target="#bookmarks"
+                (click)="bookmarkscollapse()">
+                <i class="fas fa-users" style="margin-right: 15px"></i>Bookmarks
+            </button>
+            <div class="collapsebtn" id="bookmarks" *ngIf="isBookmarkCollapsed">
+                <button class="menubtn" style="padding-left: 40px; background-color: #334247;">
+                    <a [routerLink]="['/admin-dashboard/bookmarks']"> <i class="fas fa-edit" style="margin-right: 10px">
+                        </i> Manage Bookmarks </a>
+                </button>
+            </div>
+
+            <button type="button" class="menubtn" data-toggle="collapsebtn" data-target="#files"
+                (click)="filescollapse()">
+                <i class="fas fa-users" style="margin-right: 15px"></i>Files
+            </button>
+            <div class="collapsebtn" id="files" *ngIf="isFileCollapsed">
+                <button class="menubtn" style="padding-left: 40px; background-color: #334247;">
+                    <a [routerLink]="['/admin-dashboard/files']"> <i class="fas fa-edit" style="margin-right: 10px">
+                        </i> Manage Files </a>
+                </button>
+            </div>
+
             <button class="menubtn" (click)="logout()">
                 <i class="fas fa-sign-out-alt" style="margin-right: 15px"></i>Logout
             </button>

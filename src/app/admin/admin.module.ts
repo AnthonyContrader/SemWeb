@@ -7,6 +7,8 @@ import { UsersComponent } from './users/users.component';
 import { WorkInProgressComponent } from './work-in-progress/work-in-progress.component';
 import { ResearchesComponent } from './researches/researches.component';
 import { TopicsComponent } from './topics/topics.component';
+import { BookmarksComponent } from './bookmarks/bookmarks.component';
+import { FilesComponent } from './files/files.component';
 
 /**
  * Modulo dell'admin, qui vengono dichiarate le component che utilizza 
@@ -17,7 +19,8 @@ import { TopicsComponent } from './topics/topics.component';
  * @see AdminRoutingModule
  */
 @NgModule({
-  declarations: [AdminDashboardComponent, UsersComponent, WorkInProgressComponent, ResearchesComponent, TopicsComponent],
+  declarations: [AdminDashboardComponent, UsersComponent, WorkInProgressComponent, ResearchesComponent, 
+    TopicsComponent, BookmarksComponent, FilesComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,

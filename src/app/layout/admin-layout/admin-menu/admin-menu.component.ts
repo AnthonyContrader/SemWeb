@@ -13,6 +13,8 @@ export class AdminMenuComponent implements OnInit {
   isAccountCollapsed = false;
   isTopicCollapsed = false;
   isResearchCollapsed = false;
+  isFileCollapsed = false;
+  isBookmarkCollapsed = false;
 
   constructor(private router: Router) {
   }
@@ -47,5 +49,17 @@ export class AdminMenuComponent implements OnInit {
     if (this.isResearchCollapsed === false) {
       this.isResearchCollapsed = true;
     } else { this.isResearchCollapsed = false; }
+  }
+
+  bookmarkscollapse() {
+    if (this.isBookmarkCollapsed === false) {
+      this.isBookmarkCollapsed = true;
+    } else { this.isBookmarkCollapsed = false; }
+  }
+
+  filescollapse() {
+    if (this.isFileCollapsed === false) {
+      this.isFileCollapsed = true;
+    } else { this.isFileCollapsed = false; }
   }
 }
