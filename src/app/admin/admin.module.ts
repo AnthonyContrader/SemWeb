@@ -8,6 +8,7 @@ import { WorkInProgressComponent } from './work-in-progress/work-in-progress.com
 import { ResearchesComponent } from './researches/researches.component';
 import { TopicsComponent } from './topics/topics.component';
 import { FilesComponent } from './files/files.component';
+import { BookmarkComponent } from './bookmark/bookmark.component';
 
 /**
  * Modulo dell'admin, qui vengono dichiarate le component che utilizza 
@@ -19,7 +20,7 @@ import { FilesComponent } from './files/files.component';
  */
 @NgModule({
   declarations: [AdminDashboardComponent, UsersComponent, WorkInProgressComponent, ResearchesComponent, 
-    TopicsComponent, FilesComponent],
+    TopicsComponent, FilesComponent, BookmarkComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,
