@@ -39,6 +39,9 @@
           <td>
             <input [(ngModel)]="bookmark.bookmarkName">
           </td>
+          <td>
+            <p>{{bookmark.topicDTO.keywords}}</p>
+          </td>
           <td> 
             <button (click)=update(bookmark)>Save</button>
           </td>
