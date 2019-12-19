@@ -9,7 +9,7 @@ import it.contrader.service.ResearchService;
 
 @RestController
 @RequestMapping("/research")
-@CrossOrigin
+@CrossOrigin(origins = "http://localhost:4200")
 public class ResearchController extends AbstractController<ResearchDTO> {
 	
 	@Autowired

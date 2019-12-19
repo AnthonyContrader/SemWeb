@@ -1,13 +1,8 @@
 package it.contrader.converter;
 
-import static org.hamcrest.CoreMatchers.nullValue;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
 import it.contrader.dto.BookmarkDTO;
-import it.contrader.dto.TopicDTO;
-import it.contrader.dto.UserDTO;
 import it.contrader.model.Bookmark;
 
 @Component
@@ -26,7 +21,7 @@ public class BookmarkConverter  extends AbstractConverter<Bookmark, BookmarkDTO>
 		if(bookmarkDTO != null) {
 			bookmark = new Bookmark();
 			bookmark.setId(bookmarkDTO.getId());
-			bookmark.setBoomarkName(bookmarkDTO.getBookmarkName());
+			bookmark.setBookmarkName(bookmarkDTO.getBookmarkName());
 			if(bookmarkDTO.getUserDTO() != null) {
 				bookmark.setUser(userConverter.toEntity(bookmarkDTO.getUserDTO()));
 			}
@@ -44,7 +39,7 @@ public class BookmarkConverter  extends AbstractConverter<Bookmark, BookmarkDTO>
 		 if(bookmark != null) {
 			 bookmarkDTO =new BookmarkDTO();
 			 bookmarkDTO.setId(bookmark.getId());
-			 bookmarkDTO.setBookmarkName(bookmark.getBoomarkName());
+			 bookmarkDTO.setBookmarkName(bookmark.getBookmarkName());
 			 if(bookmark.getUser() != null) {
 				 bookmarkDTO.setUserDTO(userConverter.toDTO(bookmark.getUser()));
 			 }

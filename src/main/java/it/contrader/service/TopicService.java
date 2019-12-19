@@ -6,5 +6,5 @@ import it.contrader.model.Topic;
 
 @Service
 public class TopicService extends AbstractService<Topic, TopicDTO> {
-
+	
 }

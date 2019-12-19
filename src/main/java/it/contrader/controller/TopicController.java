@@ -9,7 +9,7 @@ import it.contrader.service.TopicService;
 
 @RestController
 @RequestMapping("/topic")
-@CrossOrigin
+@CrossOrigin(origins = "http://localhost:4200")
 public class TopicController extends AbstractController<TopicDTO> {
 	
 	@Autowired

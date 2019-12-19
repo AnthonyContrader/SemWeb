@@ -1,7 +1,6 @@
 package it.contrader.model;
 
 import javax.persistence.CascadeType;
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -17,8 +16,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 
-
-
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
@@ -30,7 +27,7 @@ public class Bookmark {
 	private long id;
 	
 	@NotNull
-	private String boomarkName;
+	private String bookmarkName;
 	
 	@ManyToOne(cascade = CascadeType.MERGE, fetch = FetchType.LAZY)
 	@JoinColumn(name = "idUser", referencedColumnName = "id" )
@@ -39,7 +36,4 @@ public class Bookmark {
 	@ManyToOne(cascade = CascadeType.MERGE, fetch = FetchType.LAZY)
 	@JoinColumn(name="idTopic",referencedColumnName = "id")
 	private Topic topic;
-	
-	
-	
 }
