@@ -6,10 +6,9 @@ import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class BookmarkService extends AbstractService<BookmarkDTO> {
+export class BookmarkService extends AbstractService<BookmarkDTO>{
 
-  constructor(http: HttpClient) {
-
+  constructor(http : HttpClient) {
     super(http);
     this.type = "bookmark";
    }

@@ -7,31 +7,39 @@
       <table>
         <tr>
           <th>
-            Keywords
+            Name
+          </th>
+          <th>
+            Topic
           </th>
           <th>
             Edit
           </th>
           <th>
-            Topic
+            Bookmark
           </th>
         </tr>
         <tr>
           <td>
-            <input placeholder="Bookmark Name" [(ngModel)]="bookmarktoinsert.bookmarkname">
+            <input placeholder="Bookmark Name" [(ngModel)]="bookmarktoinsert.bookmarkName">
+          </td>
+          <td>
+            <select placeholder="topic" [(ngModel)]= "bookmarktoinsert.topicDTO">
+              <option [(ngValue)]="topic" *ngFor= "let topic of topics">{{topic.keywords}}</option>
+            </select>
           </td>
           <td>
             <button (click)="insert(bookmarktoinsert)">Insert</button>
-          </td>
+          </td>  
           <td>
             <button (click)="clear()">Clear</button>
           </td>
         </tr> 
         <tr *ngFor="let bookmark of bookmarks">
           <td>
-            <input [(ngModel)]="bookmark.bookmarkname">
+            <input [(ngModel)]="bookmark.bookmarkName">
           </td>
-          <td>
+          <td> 
             <button (click)=update(bookmark)>Save</button>
           </td>
           <td>
