@@ -1,0 +1,58 @@
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-md-1">
+
+    </div>
+    <div class="col-md-10">
+      <table>
+        <tr>
+          <th>
+            Name
+          </th>
+          <th>
+            Topic
+          </th>
+          <th>
+            Edit
+          </th>
+          <th>
+            Bookmark
+          </th>
+        </tr>
+        <tr>
+          <td>
+            <input placeholder="Bookmark Name" [(ngModel)]="bookmarktoinsert.bookmarkName">
+          </td>
+          <td>
+            <select placeholder="topic" [(ngModel)]= "bookmarktoinsert.topicDTO">
+              <option [(ngValue)]="topic" *ngFor= "let topic of topics">{{topic.keywords}}</option>
+            </select>
+          </td>
+          <td>
+            <button (click)="insert(bookmarktoinsert)">Insert</button>
+          </td>  
+          <td>
+            <button (click)="clear()">Clear</button>
+          </td>
+        </tr> 
+        <tr *ngFor="let bookmark of bookmarks">
+          <td>
+            <input [(ngModel)]="bookmark.bookmarkName">
+          </td>
+          <td>
+            <p>{{bookmark.topicDTO.keywords}}</p>
+          </td>
+          <td> 
+            <button (click)=update(bookmark)>Save</button>
+          </td>
+          <td>
+            <button (click)="delete(bookmark)">Delete</button>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="col-md-1">
+
+    </div>
+  </div>
+</div>

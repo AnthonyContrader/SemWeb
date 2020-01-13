@@ -1,0 +1,58 @@
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-md-1">
+
+    </div>
+    <div class="col-md-10">
+      <table>
+        <tr>
+          <th>
+            Path
+          </th>
+          <th>
+            Topic
+          </th>
+          <th>
+            Edit
+          </th>
+          <th>
+            File
+          </th>
+        </tr>
+        <tr>
+          <td>
+            <input placeholder="File path" [(ngModel)]="filetoinsert.path">
+          </td>
+          <td>
+            <select placeholder="topic" [(ngModel)]= "filetoinsert.topicDTO">
+              <option [(ngValue)]="topic" *ngFor= "let topic of topics">{{topic.keywords}}</option>
+            </select>
+          </td>
+          <td>
+            <button (click)="insert(filetoinsert)">Insert</button>
+          </td>  
+          <td>
+            <button (click)="clear()">Clear</button>
+          </td>
+        </tr> 
+        <tr *ngFor="let file of files">
+          <td>
+            <input [(ngModel)]="file.path">
+          </td>
+          <td>
+            <p>{{file.topicDTO.keywords}}</p>
+          </td>
+          <td> 
+            <button (click)=update(file)>Save</button>
+          </td>
+          <td>
+            <button (click)="delete(file)">Delete</button>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="col-md-1">
+
+    </div>
+  </div>
+</div>
