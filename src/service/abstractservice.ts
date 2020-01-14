@@ -31,14 +31,6 @@ export abstract class AbstractService<DTO> implements Service<DTO> {
         }
     }
 
-    getAllBy(id: number): Observable<DTO[]> {
-        return this.http.get<DTO[]>('http://localhost:' + this.port + '/' + this.nome + '/' + this.type + id, {
-            headers: {
-                Authorization: this.auth()
-            }
-        });
-    }
-
     getAll(): Observable<DTO[]> {
         return this.http.get<DTO[]>('http://localhost:' + this.port + '/' + this.nome + '/' + 'api' + '/' + this.type, {
             headers: {
@@ -57,14 +49,6 @@ export abstract class AbstractService<DTO> implements Service<DTO> {
 
     delete(id: number): Observable<DTO> {
         return this.http.delete<DTO>('http://localhost:' + this.port + '/' + this.nome + '/' + 'api' + '/' + this.type + '/' + id, {
-            headers: {
-                Authorization: this.auth()
-            }
-        });
-    }
-
-    deleteU(login: string): Observable<DTO> {
-        return this.http.delete<DTO>('http://localhost:' + this.port + '/' + this.nome + '/' + 'api' + '/' + this.type + '/' + login, {
             headers: {
                 Authorization: this.auth()
             }

@@ -16,8 +16,6 @@ export class UserDTO {
 
    password: string;
 
-   usertype: Usertype;
-
    authorities: string;
 }
 

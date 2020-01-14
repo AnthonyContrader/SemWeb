@@ -4,6 +4,7 @@ import { NgForm } from '@angular/forms';
 import { UserService } from 'src/service/user.service';
 import { Router } from '@angular/router';
 import { UserDTO } from 'src/dto/userdto';
+import { Usertype } from 'src/dto/usertype';
 
 @Component({
   selector: 'app-login',
@@ -46,7 +47,7 @@ export class LoginComponent implements OnInit {
     this.user = new UserDTO;
     this.user.username = f.value.username;
     this.user.password = f.value.password;
-    this.user.usertype = 1;
+    this.user.authorities = "ROLE_USER";//Usertype.ROLE_ADMIN;
     this.service.insert(this.user).subscribe();
   }
 }
