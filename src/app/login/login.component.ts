@@ -24,31 +24,28 @@ export class LoginComponent implements OnInit {
   login(f: NgForm): void {
     this.loginDTO = new LoginDTO(f.value.username, f.value.password);
 
-    this.service.login(this.loginDTO).subscribe((user) => {
+    this.service.login(this.loginDTO).subscribe((token: any) => {
+      localStorage.setItem("AUTOKEN", JSON.stringify({ "authorities": token.id_token }));
+      localStorage.setItem("currentUser", JSON.stringify({ "authorities": token.id_token }));
+      this.service.userLogged(this.loginDTO.username).subscribe((user: UserDTO) => {
 
-      if (user != null) {
-        localStorage.setItem('currentUser', JSON.stringify(user));
-
-        switch (user.usertype.toString()) {
-          case 'ADMIN': {
+        if (user != null) {
+          localStorage.setItem('AUTOKEN', JSON.stringify(user));
+          console.log(user.authorities);
+          if (user.authorities == "ROLE_ADMIN") {
             this.router.navigate(['/admin-dashboard']);
-            break;
           }
-          case 'USER': {
-            this.router.navigate(['/user-dashboard']);
-            break;
-          }
-          default:
-            this.router.navigate(['/login']);
+        } else {
+          alert("Wrong username or password");
         }
-      }
+      });
     });
   }
 
   register(f: NgForm): void {
     this.user = new UserDTO;
     this.user.username = f.value.username;
-    this.user.password = f.value.password; 
+    this.user.password = f.value.password;
     this.user.usertype = 1;
     this.service.insert(this.user).subscribe();
   }
