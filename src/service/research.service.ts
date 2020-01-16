@@ -3,6 +3,7 @@ import { AbstractService } from './abstractservice';
 import { HttpClient } from '@angular/common/http';
 import { ResearchDTO } from 'src/dto/researchdto';
 
+
 @Injectable({
   providedIn: 'root'
 })

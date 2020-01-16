@@ -4,7 +4,7 @@ import { UserDTO } from 'src/dto/userdto';
 import { HttpClient } from '@angular/common/http';
 import { LoginDTO } from 'src/dto/logindto';
 import { Observable } from 'rxjs';
-import { Auth } from './auth';
+
 
 /**
  * I service sono decorati da @Injectable. 
@@ -20,21 +20,30 @@ import { Auth } from './auth';
 })
 export class UserService extends AbstractService<UserDTO>{
 
-  constructor(http: HttpClient, authorization: Auth) {
-    super(http, authorization);
+  constructor(http: HttpClient) { 
+    super(http);
     this.type = 'users';
     this.port = "8080";
   }
-
+ auth() {
+        const user = JSON.parse(localStorage.getItem('AUTOKEN')) as UserDTO;
+        if (user) {
+            console.log('Bearer ' + user.authorities);
+            return 'Bearer ' + user.authorities;
+        } else {
+            return '';
+        }
+    }
   login(loginDTO: LoginDTO): Observable<UserDTO> {
     return this.http.post<any>('http://localhost:8080/api/authenticate', loginDTO)
   }
 
   userLogged(username: string) {
-     console.log(this.authorization.auth());
+     console.log(this.auth());
+    
      return this.http.get('http://localhost:8080/api/users/' + username, {
        headers: {
-         Authorization: this.authorization.auth()
+         Authorization: this.auth()
        }
      });
    }
